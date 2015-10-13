@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static', filename='jquery.min.js') }}" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+  </head>
+    <body>
+      <form method="POST">
+        <div class="container" style="padding:10px">
+          <input type="submit" class="btn btn-lg btn-primary btn-block" name="key" value="page_up">
+        </div>
+        <div class="container" style="padding:10px">
+          <input type="submit" class="btn btn-lg btn-primary btn-block" name="key" value="page_down">
+        </div>
+        <div class="container" style="padding:10px">
+          <input type="submit" class="btn btn-lg btn-primary btn-block" name="key" value="F5">
+        </div>
+        <div class="container" style="padding:10px">
+          <input type="submit" class="btn btn-lg btn-primary btn-block" name="key" value="Esc">
+        </div>
+        <div class="container" style="padding:20px">
+          <a class="btn btn-lg btn-success btn-block" href="{{ url_for('file_manager') }}" > Open File </a>
+        </div>
+      </form>
+    </body>
+</html>

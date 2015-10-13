@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static', filename='jquery.min.js') }}" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+  </head>
+  <body>
+    <div class="container" style="padding:50px">
+      <a class="btn btn-lg btn-primary btn-block" href="/">Home</a>
+    </div>
+    <form method="POST">
+      <table class="table">
+        <tr>
+          <td>Dir</td>
+          <td><a href="{{ url_for('file_manager', path=pr_pwd) }}">..</a></td>
+        </tr>
+        {% for dir in dirs %}
+          <tr>
+            <td>Dir</td>
+            <td><a href="{{ url_for('file_manager', path=dir.0) }}"> {{dir.1}}</a></td>
+          </tr>
+        {% endfor %}
+        {% for file in files %}
+          <tr>
+            <td>file</td>
+            <td><a href="{{ url_for('openfile', path=file.0) }}"> {{file.1}}</a></td>
+          </tr>
+        {% endfor %}
+      </table>
+      <!--
+      <div class="container" style="padding:50px">
+        <input type="hidden" name="apps" value="evince">
+      </div>
+
+      <div class="container" style="padding:50px">
+        <input type="text" class="" name="filename">
+      </div>
+      <div class="container" style="padding:50px">
+        <input type="submit" class="btn btn-lg btn-primary btn-block" name="key" value="open">
+      </div>
+    -->
+    </form>
+  </body>
+</html>
